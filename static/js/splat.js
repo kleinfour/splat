@@ -598,7 +598,7 @@ void main () {
 //     0.03, 6.55, 1,
 // ];
 // let defaultViewMatrix = [0.95,-0.08,0.27,0,0.09,0.99,0.03,0,-0.27,-0.02,0.96,0,0.48,-1.89,2.36,1]
-let defaultViewMatrix = [0.12,-0.73,0.65,0,0.51,0.6,0.6,0,-0.86,0.25,0.45,0,0.06,-1.51,2.48,1];
+let defaultViewMatrix = [0.98,0.02,0.08,0,-0.04,0.87,0.47,0,-0.06,-0.49,0.87,0,0.16,-1.95,1.23,1];
 let viewMatrix = defaultViewMatrix;
 async function main() {
     let carousel = true;
@@ -613,6 +613,12 @@ async function main() {
     console.log(path);
     console.log(window.location.origin);
     const url = new URL("static/splat" + path + ".splat", window.location.origin);
+
+    if (path == "/2-4-derailment") {
+        let matrix = [0.97,-0.17,0.05,0,0.18,0.82,-0.53,0,0.05,0.52,0.85,0,14.28,-9.16,-0.19,1];
+        defaultViewMatrix = matrix;
+        viewMatrix = defaultViewMatrix;
+    }
 
     // const url = new URL("data/train/2-12_seq0-6_2_1fps.splat", "http://localhost:8000/");
 
